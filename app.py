@@ -10,6 +10,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+openai_api_key = os.getenv("OPENAI_API_KEY")
+if not openai_api_key:
+    raise ValueError("API key not found. Please check your .env file.")
+
 # ChatOpenAI Templates
 system_template = """You are a helpful assistant who always speaks in a pleasant tone!
 """
